@@ -1,20 +1,15 @@
 const testGetData = async (req, res) => {
     try {
-        // const someData = {
-        //     firstName: 'John',
-        //     lastName: 'Doe',
-        //     age: 69,
-        //     weight: 200
-        // };
-
-        // res.status(200).json({
-        //     status: 200,
-        //     // someData,
-        //     requestedAt: new Date().stoLocaleString(),
-        // });
+        const someData = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 69,
+            weight: 200
+        };
 
         res.status(200).json({
             status: 200,
+            someData,
             requestedAt: new Date().toLocaleString(),
         });
 
