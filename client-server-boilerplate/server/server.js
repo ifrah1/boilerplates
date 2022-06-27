@@ -43,13 +43,20 @@ app.use(cors());
 /* Routes */
 
 app.get('/', (req, res) => {
-    const template = `
+  const template = `
       <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
         <h1> HELLO WORLD</h1>
       </div>
     `
-    res.send(template);
+  res.send(template);
 })
+
+// test route
+
+app.use('/api/test', routes.testRoutes);
+/* NOTE TO SELF
+ * make sure the route uses app.use() if you have your * * routes in the routes folder
+*/
 
 /* App Listener */
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
