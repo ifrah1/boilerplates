@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+import React, { useEffect, useState } from 'react';
+
 
 function App() {
+  const [backendData, setBackendData] = useState([{}]);
+
+  useEffect(() => {
+    /* NOTE for connecting server and client if both are hosted in same sever
+     * in package.json for client side we add a key value of "proxy", this 
+     * allows for react app to check the server folder and go to its route
+    */
+    axios.get("/api/test/data").then(response => {
+      console.log(response.data);
+    });
+
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      HELLO WORLD
     </div>
   );
 }
