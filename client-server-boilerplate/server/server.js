@@ -1,3 +1,6 @@
+/* Note:
+ * To use "import" add in  package.json "type": "module" to use import instead of other way 
+*/
 import express from 'express';
 import logger from 'morgan';
 import cors from 'cors';
